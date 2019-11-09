@@ -1,11 +1,13 @@
 # Rumour Detection and Stance Classification
-<div style="text-align: right"> 
+
  
 ## Introduction
 
+<div style="text-align: justify"> 
 Battling the surge of fake news is a multi-faceted, complicated project, a part of which is to detect whether rumours that are spreading are fake or real. One way in which this can be done is to analyse the public reaction to a rumour when broadcasted. The public often have information from a lot of other sources, and their collective reaction brings in valuable information in detecting whether a rumour is real or fake.
 In order to analyse public reaction, we take some tweets on a topic and analyse all the replies. We classify the replies into support, deny, query and comment and later use this to verify the statement.
 We have been given tagged data for training for this task. Tasks as given in the website:
+ </div> 
 ### Subtask A
 The first subtask will deal with the complementary objective of tracking how other sources orient to the accuracy of the rumourous story. We are provided with a tree-structured conversation formed of posts replying to the originating rumourous post, where each post presents its own type of support with regard to the rumour. We frame this in terms of supporting, denying, querying or commenting on (SDQC) the claim. The goal is to label the type of interaction between a given statement and a reply post.
 ### Subtask B

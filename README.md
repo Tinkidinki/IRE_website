@@ -9,9 +9,14 @@ In order to analyse public reaction, we take some tweets on a topic and analyse 
 We have been given tagged data for training for this task. Tasks as given in the website:
  </div> 
 ### Subtask A
+
+<div style="text-align: justify"> 
 The first subtask will deal with the complementary objective of tracking how other sources orient to the accuracy of the rumourous story. We are provided with a tree-structured conversation formed of posts replying to the originating rumourous post, where each post presents its own type of support with regard to the rumour. We frame this in terms of supporting, denying, querying or commenting on (SDQC) the claim. The goal is to label the type of interaction between a given statement and a reply post.
+</div> 
 ### Subtask B
+<div style="text-align: justify"> 
 The goal of the second subtask is to predict the veracity of a given rumour. The rumour is presented as a post reporting or querying a claim but deemed unsubstantiated at the time of release. Given such a claim, and a set of other resources provided, systems should return a label describing the anticipated veracity of the rumour as true or false along with a confidence score.
+</div> 
 
 ## Description of the Dataset
 For training purposes, we have been provided with 9 categories about topics that have generated a lot of conversation in Twitter - for example, the Char- lie Hebdo shooting and the Sydney Seige. Each category contains around 120-150 tweets and their replies in the Twitter tree structure and every reply is tagged with Support, Query, Comment, Deny.

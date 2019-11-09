@@ -10,7 +10,7 @@ We have been given tagged data for training for this task. Tasks as given in the
  </div> 
 ### Subtask A
 
-<div style="text-align: right"> 
+<div style="text-align: justify"> 
 The first subtask will deal with the complementary objective of tracking how other sources orient to the accuracy of the rumourous story. We are provided with a tree-structured conversation formed of posts replying to the originating rumourous post, where each post presents its own type of support with regard to the rumour. We frame this in terms of supporting, denying, querying or commenting on (SDQC) the claim. The goal is to label the type of interaction between a given statement and a reply post.
 </div> 
 ### Subtask B

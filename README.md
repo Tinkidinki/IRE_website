@@ -1,5 +1,6 @@
 # Rumour Detection and Stance Classification
 <div style="text-align: right"> 
+ 
 ## Introduction
 
 Battling the surge of fake news is a multi-faceted, complicated project, a part of which is to detect whether rumours that are spreading are fake or real. One way in which this can be done is to analyse the public reaction to a rumour when broadcasted. The public often have information from a lot of other sources, and their collective reaction brings in valuable information in detecting whether a rumour is real or fake.

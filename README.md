@@ -62,8 +62,9 @@ The entire tweet tree is converted to such branches. For example, if the
 tweet tree is as above, then the branches are:
 B→E
 B→F→G B→F→H C D→I
-
+![tree image](Tree.jpeg)
 Now, this data is an extremely convenient format to input into a Recur- rent Neural Network. Consider the branch B → F → G:
+![lstm image](lstm.jpeg)
 Now, F has a tag on its stance with respect to B, and G has a tag with its stance with respect to F. Say, F is tagged support and G is tagged comment. The branch is given as input in parts at various timesteps, and the loss function can be calculated based on every output.
 
 Since RNNs are known for forgetting historical context, we can use an LSTM to get past this problem. Hence, if we do not care about sibling context, a branch-LSTM is an ideal neural network to use.

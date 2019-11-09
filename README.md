@@ -73,5 +73,3 @@ This heavily beats the 84% accuracy of the winning model. While the two cannot b
 According to the original timeline, Deliverable 2 included completion of Sub- task A which we have completed, although the results need to be analysed.
 ### Further Timeline
 - Analysis of Subtask A results, possibly look at sibling context. • Implementing a working model of Subtask B.
-
-</div>

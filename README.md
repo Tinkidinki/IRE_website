@@ -1,8 +1,4 @@
 # Rumour Detection and Stance Classification
-
- 
-## Introduction
-
 ![Rumours](rumours.png)
 
 <div style="text-align: justify"> 

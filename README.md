@@ -9,6 +9,6 @@ We have been given tagged data for training for this task. Here is a report cont
  </div> 
 
 ## [Report](IRE_final.pdf)
-## [Video](www.google.com)
+## [Video](https://youtu.be/UysOJ0RfoMQ)
 
 Project by: Omkar Gurjar, Jatin Paliwal, Dhawal Jain, Mahathi Vempati

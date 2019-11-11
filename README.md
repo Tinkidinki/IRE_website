@@ -11,6 +11,6 @@ We have been given tagged data for training for this task. Here is a report cont
 ## [Report](IRE_final.pdf)
 ## [Video](https://youtu.be/UysOJ0RfoMQ)
 
-<iframe width="1040" height="585" src="https://www.youtube.com/embed/UysOJ0RfoMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p align="center"><iframe width="1040" height="585" src="https://www.youtube.com/embed/UysOJ0RfoMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
 Project by: Omkar Gurjar, Jatin Paliwal, Dhawal Jain, Mahathi Vempati

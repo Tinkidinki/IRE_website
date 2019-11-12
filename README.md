@@ -35,8 +35,11 @@ This subtask was completed in the first phase ofthe project.  We write the detai
  
  2.The  fine-tune  phase:  This  is  separate  forevery transformer, this is where we feed inour  tagged  data  to  the  transformer  and  itlearns the S, D, Q, C tags.  For each of the3 transformer models we used, fine tuningtook about 5-6 hours.
  </div>
+ 
  #### We attempt three different transformer models here:
- #### Bert
+
+#### Bert
+
 <div style="text-align: justify">
 <b>Details:</b> 12-layer, 768-hidden, 12-heads, 110Mparameters.  Trained on cased English text.Thepre-training  corpus  for  BERT  is  BooksCorpus(800M  words)  and  English  Wikipedia  (2,500Mwords)
 <br>

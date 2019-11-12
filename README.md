@@ -62,6 +62,7 @@ It  is  bidirectional  and  heav-ily relies on the pretraining phase for languag
 
 ### Contextual Method
 #### Repository: [branchLSTM Repository](https://github.com/Tinkidinki/branch-lstm-testing)
+<div style="text-align: justify">
 Given  the  poor  performance  of  our  context-free models (note that a naive classifier that pre-dicted ’Comment’ – the majority class – all thetime on the test set would have given an accu-racy of 75.58 %),  we move on to a contextualmodel. <br>
 The structure of the data in our project is in atree format.  Consider the example in the figurebelow. <br>
 Consider three starting tweets:  B, C and D.All other tweets are replies to these. Now, for allthe tweets in the sub-branches B, C and D, all the tweets make up the context.  For example,for tweet G - tweets B, E, F and H make up thecontext.  However, one way to look at this data,as we need to do stance classification, is to ig-nore the context due to siblings and look at onlyparental context.<br>
@@ -76,6 +77,7 @@ On  running  the  model  on  the  2019  (Tweets only) data, the results are as f
 <b>Accuracy:</b> 95.77 % <br>
 <b>F-score:</b> 0.756
 </div>
+
 ### Model Comparison
 <div> <img src="rumours.png"></img></div>
 This  heavily  beats  the  84%  accuracy  of  thewinning model.  While the two cannot be com-pared because we have only trained and testedon Twitter data as opposed to both Twitter andReddit done by the winning submission, we areyet to study the reason for this accuracy. <br>

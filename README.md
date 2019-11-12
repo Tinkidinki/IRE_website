@@ -29,9 +29,13 @@ This subtask was completed in the first phase ofthe project.  We write the detai
 
 <div style="text-align: justify">
  First,  we  attempt  to  classify  tweets  into  S,D,  Q,  C  without  the  use  of  parent  or  siblingtweets.  Note that this attempt is substantiatedas  a  tweet  by  itself  could  give  reasonable  in-formation about its class.   A question mark ora  word  like  ’how’,  etc,  immediately  hints  at  aquery,  while  negative  connotations  could  referto a denial.For this approach, we use Transformers:  anattention mechanism that learns contextual relations between words (or sub-words) in a textas  opposed  to  directional  models,  which  readthe text input sequentially (left-to-right or right-to-left), the Transformer encoder reads the en-tire  sequence  of  words  at  once.   Therefore  itis considered bidirectional,  though it would bemore  accurate  to  say  that  its  non-directional.This characteristic allows the model to learn thecontext of a word based on all of its surround-ings (left and right of the word).We  use  SimpleTransformer:   This  library  isbased  on  the  Pytorch  Transformers  library  byHuggingFace. Using this library, you can quicklytrain and evaluate several transformer models.We  first  preprocess  the  data  and  convert  theJSON tree structure to Tab separated values fedin a 2D array to the SimpleTransformer module.The transformer then has two phases: 
+ 
  </br>
+ 
  1.The  pre-train  phase:   which  has  alreadybeen  done  and  is  available  -  this  is  thephase  where  the  transformer  learns  thestructure of a language after being trainedon a large corpus (eg: Wikipedia). 
+ 
  </br>
+ 
  2.The  fine-tune  phase:  This  is  separate  forevery transformer, this is where we feed inour  tagged  data  to  the  transformer  and  itlearns the S, D, Q, C tags.  For each of the3 transformer models we used, fine tuningtook about 5-6 hours.
 </div>
 

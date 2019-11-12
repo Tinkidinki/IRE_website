@@ -13,8 +13,8 @@ We have been given tagged data for training for this task. Here is a report cont
 <div style="text-align: justify"> 
 For training purposes,  we have been providedwith 9 categories about topics that have gener-ated  a  lot  of  conversation  in  Twitter  and  Red-dit  -  for  example,  the  Charlie  Hebdo  shootingand the Sydney Seige.  Each category containsaround 120-150 tweets and their replies in theTwitter  tree  structure  or  Reddit  comment  treestructure  and  every  reply  is  tagged  with  Sup-port, Query, Comment, Deny. The test data alsocontains rumours that need to be classified astrue or false.  We have with us the training datafrom the 2017 and 2019 editions of the compe-tition, and the test data from 2019.The posts themseleves can be considered astrees,  with  parent  and  sibling  posts  providingcontext.   The  tagged  data  contains  whether  agiven tweet is S, D, Q or C with respect to itsimmediate ancestor. 
 </div>
-</br>
 [2019 Train and Test Data](https://competitions.codalab.org/competitions/19938) 
+</br>
 [2017 Train Data](https://github.com/kochkinaelena/branchLSTM/tree/master/downloaded_data)
  
 

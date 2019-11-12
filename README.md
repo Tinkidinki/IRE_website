@@ -76,7 +76,6 @@ On  running  the  model  on  the  2019  (Tweets only) data, the results are as f
 <b>Accuracy:</b> 95.77 % <br>
 <b>F-score:</b> 0.756
 </div>
-<div style="text-align: justify">
 ### Model Comparison
 <div> <img src="rumours.png"></img></div>
 This  heavily  beats  the  84%  accuracy  of  thewinning model.  While the two cannot be com-pared because we have only trained and testedon Twitter data as opposed to both Twitter andReddit done by the winning submission, we areyet to study the reason for this accuracy. <br>
@@ -98,7 +97,7 @@ The  results  using  only  public  reaction  -  Thesupport, deny and comment per
 
 ## Conclusion
 <div style="text-align: justify"> 
-The  best  accuracy  using  all  the  post  featureswas  53.08  %  with  a  Random  forest,  whereasthe best accuracy using just public reaction is54.32 % with an MLP Classifier. It turns out theaccuracy that was gotten by using 1750+ fea-tures could be surpassed by the three featuresdescribing public reaction.
+The  best  accuracy  using  all  the  post  featureswas  53.08  %  with  a  Random  forest,  whereasthe best accuracy using just public reaction is 54.32 % with an MLP Classifier. It turns out theaccuracy that was gotten by using 1750+ fea-tures could be surpassed by the three featuresdescribing public reaction.
 </div>
 
 ## [Report](IRE_final.pdf)

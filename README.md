@@ -107,7 +107,8 @@ We  have  also  attempted  to  use  Bert  againfor contextual classification - u
 The  results  using  only  public  reaction  -  Thesupport, deny and comment percentages - justthree  features  as  opposed  to  1750  in  the  firstcase to a post are given in the images below. <br>
 </div>
 
-## Conclusion
+## Co-nclusion
+
 <div style="text-align: justify"> 
 The  best  accuracy  using  all  the  post  featureswas  53.08  %  with  a  Random  forest,  whereasthe best accuracy using just public reaction is 54.32 % with an MLP Classifier. It turns out theaccuracy that was gotten by using 1750+ fea-tures could be surpassed by the three featuresdescribing public reaction.
 </div>

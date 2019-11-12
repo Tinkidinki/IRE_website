@@ -59,9 +59,9 @@ It  is  bidirectional  and  heav-ily relies on the pretraining phase for languag
 Given  the  poor  performance  of  our  context-free models (note that a naive classifier that pre-dicted ’Comment’ – the majority class – all thetime on the test set would have given an accu-racy of 75.58 %),  we move on to a contextualmodel. <br>
 The structure of the data in our project is in atree format.  Consider the example in the figurebelow. <br>
 Consider three starting tweets:  B, C and D.All other tweets are replies to these. Now, for allthe tweets in the sub-branches B, C and D, all the tweets make up the context.  For example,for tweet G - tweets B, E, F and H make up thecontext.  However, one way to look at this data,as we need to do stance classification, is to ig-nore the context due to siblings and look at onlyparental context.<br>
-<img align="center" src="rumours.png" alt="Branch Image1"></img>
+<div><img align="center" src="rumours.png" alt="Branch Image1"></img></div>
 Therefore,  the  context  for  G  is  B→F→G.   The entire tweet tree is converted to suchbranches.  For example, if the tweet tree is asabove, then the branches are:<br>
-<img align="center" src="rumours.png" alt="Branch Image2"></img>
+<div><img align="center" src="rumours.png" alt="Branch Image2"></img></div>
 Now, this data is an extremely convenient for-mat to input into a Recurrent Neural Network asevery post is tightly correlated to its immediateancestor, but also needs to learn context fromother posts in the branch.  Consider the branchB→F→G: <br>
 Now, F has a tag on its stance with respect toB, and G has a tag with its stance with respectto F. Say, F is tagged support and G is taggedcomment. The branch is given as input in partsat various timesteps, and the loss function canbe calculated based on every output.<br>
 Since RNNs are known for forgetting histor-ical context,  we can use an LSTM to get pastthis problem.   Hence,  if we do not care aboutsibling context, a branch-LSTM is an ideal neu-ral network to use. <br>
@@ -89,7 +89,7 @@ The  results  using  only  public  reaction  -  Thesupport, deny and comment per
 
 </div>
 
-### Conclusion
+## Conclusion
 <div style="text-align: justify"> 
 The  best  accuracy  using  all  the  post  featureswas  53.08  %  with  a  Random  forest,  whereasthe best accuracy using just public reaction is54.32 % with an MLP Classifier. It turns out theaccuracy that was gotten by using 1750+ fea-tures could be surpassed by the three featuresdescribing public reaction.
 </div>

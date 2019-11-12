@@ -54,8 +54,10 @@ RoBERTa,  which  was  implemented  in  Py-Torch, modifies key hyperparameters in
 <br>
 <b>Accuracy:</b> 73.74 %
 </div> 
+
  #### XLNet
- <div style="text-align: justify">
+
+<div style="text-align: justify">
 <b>Details:</b> 12-layer, 768-hidden, 12-heads, 110Mparameters.   XLNet was trained with over 130GB of textual data.XLNet  is  a  generalized  autoregressive  pre-training  method. <br>
 It  is  bidirectional  and  heav-ily relies on the pretraining phase for languagestructure  compared  to  the  other  two  modelsusing  a  method  called  Permutation  LanguageModelling.
 <br>

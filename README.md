@@ -47,7 +47,8 @@ This subtask was completed in the first phase ofthe project.  We write the detai
  </div>
  
  #### Roberta
- <div style="text-align: justify">
+ 
+<div style="text-align: justify">
 <b>Details:</b> 125M parameters RoBERTa using theBERT-base  architecture.   RoBERTa  uses  160GB  of  text  for  pre-training,  including  16GB  ofBooks  Corpus  and  English  Wikipedia  used  inBERT.  The  additional  data  included  Common-Crawl News dataset (63 million articles, 76 GB),Web text corpus (38 GB) and stories from Com-mon Crawl (31 GB). <br>
 RoBERTa builds on BERTs language mask-ing strategy, wherein the system learns to pre-dict  intentionally  hidden  sections  of  text  withinotherwise unannotated language examples. <br>
 RoBERTa,  which  was  implemented  in  Py-Torch, modifies key hyperparameters in BERT,including  removing  BERTs  next-sentence  pre-training objective, and training with much largermini-batches  and  learning  rates.    This  allowsRoBERTa to improve on the masked languagemodeling  objective  compared  with  BERT  andleads to better downstream task performance

@@ -59,9 +59,9 @@ It  is  bidirectional  and  heav-ily relies on the pretraining phase for languag
 Given  the  poor  performance  of  our  context-free models (note that a naive classifier that pre-dicted ’Comment’ – the majority class – all thetime on the test set would have given an accu-racy of 75.58 %),  we move on to a contextualmodel. <br>
 The structure of the data in our project is in atree format.  Consider the example in the figurebelow. <br>
 Consider three starting tweets:  B, C and D.All other tweets are replies to these. Now, for allthe tweets in the sub-branches B, C and D, all the tweets make up the context.  For example,for tweet G - tweets B, E, F and H make up thecontext.  However, one way to look at this data,as we need to do stance classification, is to ig-nore the context due to siblings and look at onlyparental context.<br>
-<img align="center" src="rumours.png" alt="Branch Image1"></p>
+<img align="center" src="rumours.png" alt="Branch Image1"></img>
 Therefore,  the  context  for  G  is  B→F→G.   The entire tweet tree is converted to suchbranches.  For example, if the tweet tree is asabove, then the branches are:<br>
-<img align="center" src="rumours.png" alt="Branch Image2"></p>
+<img align="center" src="rumours.png" alt="Branch Image2"></img>
 Now, this data is an extremely convenient for-mat to input into a Recurrent Neural Network asevery post is tightly correlated to its immediateancestor, but also needs to learn context fromother posts in the branch.  Consider the branchB→F→G: <br>
 Now, F has a tag on its stance with respect toB, and G has a tag with its stance with respectto F. Say, F is tagged support and G is taggedcomment. The branch is given as input in partsat various timesteps, and the loss function canbe calculated based on every output.<br>
 Since RNNs are known for forgetting histor-ical context,  we can use an LSTM to get pastthis problem.   Hence,  if we do not care aboutsibling context, a branch-LSTM is an ideal neu-ral network to use. <br>
@@ -69,6 +69,29 @@ The  Lasagne  module  constructs  a  suitableLSTM  given  input  hyperparameters
 On  running  the  model  on  the  2019  (Tweets only) data, the results are as follows:<br>
 <b>Accuracy:</b> 95.77 % <br>
 <b>F-score:</b> 0.756
+
+### Model Comparison
+<img src="Rumours.png"></img>
+This  heavily  beats  the  84%  accuracy  of  thewinning model.  While the two cannot be com-pared because we have only trained and testedon Twitter data as opposed to both Twitter andReddit done by the winning submission, we areyet to study the reason for this accuracy. <br>
+We  have  also  attempted  to  use  Bert  againfor contextual classification - using bigram sen-tences of ONLY a tweet and it’s ancestor, how-ever this also produced poor results with an ac-curacy of around 77%.
+</div>
+
+## Subtask B
+<div style="text-align: justify"> 
+ The goal of the second subtask is to predict theveracity of a given rumour.  The rumour is pre-sented as a post reporting or querying a claimbut deemed unsubstantiated at the time of re-lease. Note that for each of these posts we alsohave  the  public  opinion  we  have  analysed  inTask A. Given such a claim, the system shouldreturn a label describing the veracity of the ru-mour  as  true or  false  along  with  a confidencescore. <br>
+ Based  on  the  rumour,  we  have  to  divide  itinto three classes - True (Class 0), False (Class1)  and  Unverified  (Class  2).    Unlike  the  pre-vious data, which had sequential dependence,the data here is in the form of a bag of wordsrepresenting the tweet or the Reddit post itselfand three more features comprising the supportratio, deny ratio and comment ratio from Task A(The query ratio is redundant.) We take two dif-ferent approaches to do this classification. First,we  use  all  available  features,  and  in  the  sec-ond  approach  we  completely  discard  the  fea-tures  describing  the  post  and  use  only  publicreaction.  For each approach, we use differenttypes of classifiers. <br>
+ 
+ ### Post Context and Public Reaction
+ The  confusion  matrices  when  we  use  all  fea-tures for various classifiers are as follows.  Thecorrect classifications are on the y axes, and thepredicted classifications are on the x axis. For agood result, the diagonal has to have maximumvalues (should be lightest according to the usedcolour scheme.) Thus, we can compare the dif-ferent results in the images given below. <br>
+
+### Only Using Public Reaction!
+The  results  using  only  public  reaction  -  Thesupport, deny and comment percentages - justthree  features  as  opposed  to  1750  in  the  firstcase to a post are given in the images below. <br>
+
+</div>
+
+### Conclusion
+<div style="text-align: justify"> 
+The  best  accuracy  using  all  the  post  featureswas  53.08  %  with  a  Random  forest,  whereasthe best accuracy using just public reaction is54.32 % with an MLP Classifier. It turns out theaccuracy that was gotten by using 1750+ fea-tures could be surpassed by the three featuresdescribing public reaction.
 </div>
 
 ## [Report](IRE_final.pdf)

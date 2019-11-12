@@ -15,9 +15,7 @@ For training purposes,  we have been providedwith 9 categories about topics that
 </div>
 
 [2019 Train and Test Data](https://competitions.codalab.org/competitions/19938) 
-
 </br>
-
 [2017 Train Data](https://github.com/kochkinaelena/branchLSTM/tree/master/downloaded_data)
  
 

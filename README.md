@@ -42,11 +42,6 @@ This subtask was completed in the first phase ofthe project.  We write the detai
 <b>Accuracy:</b> 70.71 %
 
  #### Roberta
-<b>Details:</b> 12-layer, 768-hidden, 12-heads, 110Mparameters.  Trained on cased English text.Thepre-training  corpus  for  BERT  is  BooksCorpus(800M  words)  and  English  Wikipedia  (2,500Mwords)
-<br>
-<b>Accuracy:</b> 70.71 %
-
- #### Bert
 <b>Details:</b> 125M parameters RoBERTa using theBERT-base  architecture.   RoBERTa  uses  160GB  of  text  for  pre-training,  including  16GB  ofBooks  Corpus  and  English  Wikipedia  used  inBERT.  The  additional  data  included  Common-Crawl News dataset (63 million articles, 76 GB),Web text corpus (38 GB) and stories from Com-mon Crawl (31 GB). <br>
 RoBERTa builds on BERTs language mask-ing strategy, wherein the system learns to pre-dict  intentionally  hidden  sections  of  text  withinotherwise unannotated language examples. <br>
 RoBERTa,  which  was  implemented  in  Py-Torch, modifies key hyperparameters in BERT,including  removing  BERTs  next-sentence  pre-training objective, and training with much largermini-batches  and  learning  rates.    This  allowsRoBERTa to improve on the masked languagemodeling  objective  compared  with  BERT  andleads to better downstream task performance
@@ -61,6 +56,19 @@ It  is  bidirectional  and  heav-ily relies on the pretraining phase for languag
 
 ### Contextual Method
 #### Repository: [branchLSTM Repository](https://github.com/Tinkidinki/branch-lstm-testing)
+Given  the  poor  performance  of  our  context-free models (note that a naive classifier that pre-dicted ’Comment’ – the majority class – all thetime on the test set would have given an accu-racy of 75.58 %),  we move on to a contextualmodel. <br>
+The structure of the data in our project is in atree format.  Consider the example in the figurebelow. <br>
+Consider three starting tweets:  B, C and D.All other tweets are replies to these. Now, for allthe tweets in the sub-branches B, C and D, all the tweets make up the context.  For example,for tweet G - tweets B, E, F and H make up thecontext.  However, one way to look at this data,as we need to do stance classification, is to ig-nore the context due to siblings and look at onlyparental context.<br>
+<p align="center" src="branches1.png" alt="Branch Image1"></p>
+Therefore,  the  context  for  G  is  B→F→G.   The entire tweet tree is converted to suchbranches.  For example, if the tweet tree is asabove, then the branches are:<br>
+<p align="center" src="branches2.png" alt="Branch Image2"></p>
+Now, this data is an extremely convenient for-mat to input into a Recurrent Neural Network asevery post is tightly correlated to its immediateancestor, but also needs to learn context fromother posts in the branch.  Consider the branchB→F→G: <br>
+Now, F has a tag on its stance with respect toB, and G has a tag with its stance with respectto F. Say, F is tagged support and G is taggedcomment. The branch is given as input in partsat various timesteps, and the loss function canbe calculated based on every output.<br>
+Since RNNs are known for forgetting histor-ical context,  we can use an LSTM to get pastthis problem.   Hence,  if we do not care aboutsibling context, a branch-LSTM is an ideal neu-ral network to use. <br>
+The  Lasagne  module  constructs  a  suitableLSTM  given  input  hyperparameters.    We  didnot  do  a  hyperparameter  search  but  used  theoptimal values from the research paper in therepository. Once converted to branch structure,it is straightforward to feed it into the LSTM andtrain the model. Then, the test data is also con-verted to branches and tagged.  We convertedthe  data  to  the  2017  contest  format,  and  thelinks to the data are available in the repository- which is the baseline code modified. <br>
+On  running  the  model  on  the  2019  (Tweets only) data, the results are as follows:<br>
+<b>Accuracy:</b> 95.77 % <br>
+<b>F-score:</b> 0.756
 </div>
 
 ## [Report](IRE_final.pdf)

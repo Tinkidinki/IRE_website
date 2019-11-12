@@ -34,31 +34,30 @@ This subtask was completed in the first phase ofthe project.  We write the detai
  <br>
  
  2.The  fine-tune  phase:  This  is  separate  forevery transformer, this is where we feed inour  tagged  data  to  the  transformer  and  itlearns the S, D, Q, C tags.  For each of the3 transformer models we used, fine tuningtook about 5-6 hours.
- 
+ </div>
  #### We attempt three different transformer models here:
  #### Bert
+<div style="text-align: justify">
 <b>Details:</b> 12-layer, 768-hidden, 12-heads, 110Mparameters.  Trained on cased English text.Thepre-training  corpus  for  BERT  is  BooksCorpus(800M  words)  and  English  Wikipedia  (2,500Mwords)
 <br>
 <b>Accuracy:</b> 70.71 %
-
-</div>
-<div style="text-align: justify">
-
+ </div>
+ 
  #### Roberta
+ <div style="text-align: justify">
 <b>Details:</b> 125M parameters RoBERTa using theBERT-base  architecture.   RoBERTa  uses  160GB  of  text  for  pre-training,  including  16GB  ofBooks  Corpus  and  English  Wikipedia  used  inBERT.  The  additional  data  included  Common-Crawl News dataset (63 million articles, 76 GB),Web text corpus (38 GB) and stories from Com-mon Crawl (31 GB). <br>
 RoBERTa builds on BERTs language mask-ing strategy, wherein the system learns to pre-dict  intentionally  hidden  sections  of  text  withinotherwise unannotated language examples. <br>
 RoBERTa,  which  was  implemented  in  Py-Torch, modifies key hyperparameters in BERT,including  removing  BERTs  next-sentence  pre-training objective, and training with much largermini-batches  and  learning  rates.    This  allowsRoBERTa to improve on the masked languagemodeling  objective  compared  with  BERT  andleads to better downstream task performance
 <br>
 <b>Accuracy:</b> 73.74 %
-
-</div>
-<div style="text-align: justify">
- 
+</div> 
  #### XLNet
+ <div style="text-align: justify">
 <b>Details:</b> 12-layer, 768-hidden, 12-heads, 110Mparameters.   XLNet was trained with over 130GB of textual data.XLNet  is  a  generalized  autoregressive  pre-training  method. <br>
 It  is  bidirectional  and  heav-ily relies on the pretraining phase for languagestructure  compared  to  the  other  two  modelsusing  a  method  called  Permutation  LanguageModelling.
 <br>
 <b>Accuracy:</b> 77.6 %
+</div>
 
 ### Contextual Method
 #### Repository: [branchLSTM Repository](https://github.com/Tinkidinki/branch-lstm-testing)

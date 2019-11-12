@@ -34,6 +34,8 @@ This subtask was completed in the first phase ofthe project.  We write the detai
  <br>
  
  2.The  fine-tune  phase:  This  is  separate  forevery transformer, this is where we feed inour  tagged  data  to  the  transformer  and  itlearns the S, D, Q, C tags.  For each of the3 transformer models we used, fine tuningtook about 5-6 hours.
+ 
+ #### We attempt three different transformer mod-els here:
 </div>
 
 ## [Report](IRE_final.pdf)

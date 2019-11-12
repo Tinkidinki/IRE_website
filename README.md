@@ -92,13 +92,18 @@ We  have  also  attempted  to  use  Bert  againfor contextual classification - u
 <div style="text-align: justify"> 
  The goal of the second subtask is to predict theveracity of a given rumour.  The rumour is pre-sented as a post reporting or querying a claimbut deemed unsubstantiated at the time of re-lease. Note that for each of these posts we alsohave  the  public  opinion  we  have  analysed  inTask A. Given such a claim, the system shouldreturn a label describing the veracity of the ru-mour  as  true or  false  along  with  a confidencescore. <br>
  Based  on  the  rumour,  we  have  to  divide  itinto three classes - True (Class 0), False (Class1)  and  Unverified  (Class  2).    Unlike  the  pre-vious data, which had sequential dependence,the data here is in the form of a bag of wordsrepresenting the tweet or the Reddit post itselfand three more features comprising the supportratio, deny ratio and comment ratio from Task A(The query ratio is redundant.) We take two dif-ferent approaches to do this classification. First,we  use  all  available  features,  and  in  the  sec-ond  approach  we  completely  discard  the  fea-tures  describing  the  post  and  use  only  publicreaction.  For each approach, we use differenttypes of classifiers. <br>
- 
+ <div>
+  
  ### Post Context and Public Reaction
+ 
+ <div style="text-align: justify">
  The  confusion  matrices  when  we  use  all  fea-tures for various classifiers are as follows.  Thecorrect classifications are on the y axes, and thepredicted classifications are on the x axis. For agood result, the diagonal has to have maximumvalues (should be lightest according to the usedcolour scheme.) Thus, we can compare the dif-ferent results in the images given below. <br>
+</div>
 
 ### Only Using Public Reaction!
-The  results  using  only  public  reaction  -  Thesupport, deny and comment percentages - justthree  features  as  opposed  to  1750  in  the  firstcase to a post are given in the images below. <br>
 
+<div style="text-align: justify">
+The  results  using  only  public  reaction  -  Thesupport, deny and comment percentages - justthree  features  as  opposed  to  1750  in  the  firstcase to a post are given in the images below. <br>
 </div>
 
 ## Conclusion
